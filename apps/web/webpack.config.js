@@ -9,16 +9,16 @@ module.exports = composePlugins(withNx(), withReact(), (config) => {
   // Update the webpack config as needed here.
   // e.g. `config.plugins.push(new MyPlugin())`
 
-  // console.log('ENV VARIABLES:', {
-  //   API_URL: process.env.API_URL,
-  //   INTERNAL_CONFIG: process.env.INTERNAL_CONFIG,
-  //   NODE_ENV: process.env.NODE_ENV,
-  //   NX_APP_NAME: process.env.NX_APP_NAME,
-  //   NX_CONFIG_ONE: process.env.NX_CONFIG_ONE,
-  //   NX_CONFIG_THREE: process.env.NX_CONFIG_THREE,
-  //   NX_CONFIG_TWO: process.env.NX_CONFIG_TWO,
-  //   VERSION: process.env.VERSION ?? version,
-  // });
+  console.log('ENV VARIABLES:', {
+    API_URL: process.env.API_URL,
+    INTERNAL_CONFIG: process.env.INTERNAL_CONFIG,
+    NODE_ENV: process.env.NODE_ENV,
+    NX_APP_NAME: process.env.NX_APP_NAME,
+    NX_CONFIG_ONE: process.env.NX_CONFIG_ONE,
+    NX_CONFIG_THREE: process.env.NX_CONFIG_THREE,
+    NX_CONFIG_TWO: process.env.NX_CONFIG_TWO,
+    VERSION: process.env.VERSION ?? version,
+  });
 
   config.plugins.push(
     new webpack.EnvironmentPlugin({
