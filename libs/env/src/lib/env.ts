@@ -4,11 +4,11 @@ import { z } from 'zod';
 export const env = createEnv({
   client: {
     APP_NAME: z.string(),
+    APP_VERSION: z.string(),
+    CONFIG_ONE: z.string().default('default config one'),
     NODE_ENV: z
       .enum(['development', 'test', 'production'])
       .default('development'),
-    NX_CONFIG_ONE: z.string().default('default config one'),
-    VERSION: z.string(),
   },
   clientPrefix: '',
   runtimeEnv: {
