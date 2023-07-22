@@ -13,29 +13,36 @@ jobs:
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
-    environment: prod
     name: Build and Deploy Job
+    environment: prod
+    env:
+      NX_APP_NAME: ${{ vars.NX_APP_NAME }}
+      API_URL: ${{ vars.API_URL }}
+      NX_CONFIG_ONE: ${{ secrets.NX_CONFIG_ONE }}
+      NX_CONFIG_TWO: ${{ secrets.NX_CONFIG_TWO }}
+      NX_CONFIG_THREE: ${{ secrets.NX_CONFIG_THREE }}
+      INTERNAL_CONFIG: ${{ secrets.INTERNAL_CONFIG }}
     steps:
       - uses: actions/checkout@v3
-      - name: Create and Populate Env file
-        env:
-          NX_APP_NAME: ${{ vars.NX_APP_NAME }}
-          API_URL: ${{ vars.API_URL }}
-          NX_CONFIG_ONE: ${{ secrets.NX_CONFIG_ONE }}
-          NX_CONFIG_TWO: ${{ secrets.NX_CONFIG_TWO }}
-          NX_CONFIG_THREE: ${{ secrets.NX_CONFIG_THREE }}
-          INTERNAL_CONFIG: ${{ secrets.INTERNAL_CONFIG }}
-        run: |
-          cat <<EOF > .env
-          NX_APP_NAME=${{ env.NX_APP_NAME }}
-          API_URL=${{ env.API_URL }}
-          NX_CONFIG_ONE=${{ env.NX_CONFIG_ONE }}
-          NX_CONFIG_TWO=${{ env.NX_CONFIG_TWO }}
-          NX_CONFIG_THREE=${{ env.NX_CONFIG_THREE }}
-          INTERNAL_CONFIG=${{ env.INTERNAL_CONFIG }}
-          EOF
-          echo "cat .env"
-          cat .env
+      # - name: Create and Populate Env file
+      # env:
+      #   NX_APP_NAME: ${{ vars.NX_APP_NAME }}
+      #   API_URL: ${{ vars.API_URL }}
+      #   NX_CONFIG_ONE: ${{ secrets.NX_CONFIG_ONE }}
+      #   NX_CONFIG_TWO: ${{ secrets.NX_CONFIG_TWO }}
+      #   NX_CONFIG_THREE: ${{ secrets.NX_CONFIG_THREE }}
+      #   INTERNAL_CONFIG: ${{ secrets.INTERNAL_CONFIG }}
+      #   run: |
+      #     cat <<EOF > .env
+      #     NX_APP_NAME=${{ env.NX_APP_NAME }}
+      #     API_URL=${{ env.API_URL }}
+      #     NX_CONFIG_ONE=${{ env.NX_CONFIG_ONE }}
+      #     NX_CONFIG_TWO=${{ env.NX_CONFIG_TWO }}
+      #     NX_CONFIG_THREE=${{ env.NX_CONFIG_THREE }}
+      #     INTERNAL_CONFIG=${{ env.INTERNAL_CONFIG }}
+      #     EOF
+      #     echo "cat .env"
+      #     cat .env
       - name: Setup pnpm
         uses: pnpm/action-setup@v2.2.4
       - name: Setup Node
