@@ -17,8 +17,22 @@ jobs:
     name: Build and Deploy Job
     env:
       NX_APP_NAME: ${{ vars.NX_APP_NAME }}
+      API_URL: ${{ vars.API_URL }}
+      NX_CONFIG_ONE: ${{ vars.NX_CONFIG_ONE }}
+      NX_CONFIG_TWO: ${{ vars.NX_CONFIG_TWO }}
+      NX_CONFIG_THREE: ${{ vars.NX_CONFIG_THREE }}
+      INTERNAL_CONFIG: ${{ vars.INTERNAL_CONFIG }}
     steps:
       - uses: actions/checkout@v3
+      - name: Echo Env Variables
+        run: |
+          echo "NX_APP_NAME=$NX_APP_NAME"
+          echo NX_APP_NAME ${{ env.NX_APP_NAME }}
+          echo API_URL ${{ env.API_URL }}
+          echo NX_CONFIG_ONE ${{ env.NX_APP_NAME }}
+          echo NX_CONFIG_TWO ${{ env.NX_CONFIG_TWO }}
+          echo NX_CONFIG_THREE ${{ env.NX_CONFIG_THREE }}
+          echo INTERNAL_CONFIG ${{ env.INTERNAL_CONFIG }}
       - name: Setup pnpm
         uses: pnpm/action-setup@v2.2.4
       - name: Setup Node
