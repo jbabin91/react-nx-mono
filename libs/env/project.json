@@ -1,0 +1,16 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "env",
+  "projectType": "library",
+  "sourceRoot": "libs/env/src",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/env/**/*.ts"]
+      },
+      "outputs": ["{options.outputFile}"]
+    }
+  }
+}

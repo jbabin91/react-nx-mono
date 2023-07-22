@@ -1,6 +1,6 @@
 {
   "name": "@react-nx-mono/source",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "license": "MIT",
   "scripts": {
@@ -15,9 +15,11 @@
   },
   "dependencies": {
     "@swc/helpers": "~0.5.1",
+    "@t3-oss/env-core": "^0.6.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "tslib": "^2.6.0"
+    "tslib": "^2.6.0",
+    "zod": "^3.21.4"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.22.5",
