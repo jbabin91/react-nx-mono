@@ -58,4 +58,4 @@ jobs:
           pnpm lint
 
       - name: Build app
-        run: pnpm build --force
+        run: pnpm build --skip-nx-cache

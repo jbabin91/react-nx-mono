@@ -25,19 +25,18 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Create .env File
-        run: |
-          cat <<EOF > .env
-          API_URL=${{ env.API_URL }}
-          NX_APP_NAME=${{ env.NX_APP_NAME }}
-          NX_CONFIG_ONE=${{ env.NX_CONFIG_ONE }}
-          NX_CONFIG_TWO=${{ env.NX_CONFIG_TWO }}
-          NX_CONFIG_THREE=${{ env.NX_CONFIG_THREE }}
-          INTERNAL_CONFIG=${{ env.INTERNAL_CONFIG }}
-          EOF
-
-          echo "cat .env"
-          cat .env
+      # - name: Create .env File
+      #   run: |
+      #     cat <<EOF > .env
+      #     API_URL=${{ env.API_URL }}
+      #     NX_APP_NAME=${{ env.NX_APP_NAME }}
+      #     NX_CONFIG_ONE=${{ env.NX_CONFIG_ONE }}
+      #     NX_CONFIG_TWO=${{ env.NX_CONFIG_TWO }}
+      #     NX_CONFIG_THREE=${{ env.NX_CONFIG_THREE }}
+      #     INTERNAL_CONFIG=${{ env.INTERNAL_CONFIG }}
+      #     EOF
+      #     echo "cat .env"
+      #     cat .env
 
       - name: Setup PNPM
         uses: pnpm/action-setup@v2.2.4
@@ -72,7 +71,7 @@ jobs:
         run: pnpm install
 
       - name: Build app
-        run: pnpm build
+        run: pnpm build --skip-nx-cache
 
       - name: Deploy
         id: builddeploy
