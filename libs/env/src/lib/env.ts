@@ -7,12 +7,14 @@ export const env = createEnv({
     NODE_ENV: z
       .enum(['development', 'test', 'production'])
       .default('development'),
+    NX_CONFIG_ONE: z.string().default('default config one'),
     VERSION: z.string(),
   },
   clientPrefix: '',
   runtimeEnv: {
     APP_NAME: process.env['NX_APP_NAME'],
     NODE_ENV: process.env['NODE_ENV'],
+    NX_CONFIG_ONE: process.env['NX_CONFIG_ONE'],
     VERSION: process.env['VERSION'],
   },
 });
