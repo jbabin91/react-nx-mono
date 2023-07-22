@@ -22,13 +22,13 @@ module.exports = composePlugins(withNx(), withReact(), (config) => {
 
   config.plugins.push(
     new webpack.EnvironmentPlugin({
-      API_URL: process.env.API_URL,
-      INTERNAL_CONFIG: process.env.INTERNAL_CONFIG,
-      NODE_ENV: process.env.NODE_ENV,
-      NX_APP_NAME: process.env.NX_APP_NAME,
-      NX_CONFIG_ONE: process.env.NX_CONFIG_ONE,
-      NX_CONFIG_THREE: process.env.NX_CONFIG_THREE,
-      NX_CONFIG_TWO: process.env.NX_CONFIG_TWO,
+      // API_URL: process.env.API_URL,
+      // INTERNAL_CONFIG: process.env.INTERNAL_CONFIG,
+      // NODE_ENV: process.env.NODE_ENV,
+      // NX_APP_NAME: process.env.NX_APP_NAME,
+      // NX_CONFIG_ONE: process.env.NX_CONFIG_ONE,
+      // NX_CONFIG_THREE: process.env.NX_CONFIG_THREE,
+      // NX_CONFIG_TWO: process.env.NX_CONFIG_TWO,
       VERSION: process.env.VERSION ?? version,
     }),
   );
