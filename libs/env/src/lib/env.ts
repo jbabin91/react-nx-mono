@@ -13,8 +13,8 @@ export const env = createEnv({
   clientPrefix: '',
   runtimeEnv: {
     APP_NAME: process.env['NX_APP_NAME'],
+    APP_VERSION: process.env['VERSION'],
     NODE_ENV: process.env['NODE_ENV'],
     NX_CONFIG_ONE: process.env['NX_CONFIG_ONE'],
-    VERSION: process.env['VERSION'],
   },
 });
