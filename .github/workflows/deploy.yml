@@ -9,14 +9,6 @@ on:
     branches:
       - main
 
-env:
-  NX_APP_NAME: ${{ vars.NX_APP_NAME }}
-  API_URL: ${{ vars.API_URL }}
-  NX_CONFIG_ONE: ${{ secrets.NX_CONFIG_ONE }}
-  NX_CONFIG_TWO: ${{ secrets.NX_CONFIG_TWO }}
-  NX_CONFIG_THREE: ${{ secrets.NX_CONFIG_THREE }}
-  INTERNAL_CONFIG: ${{ secrets.INTERNAL_CONFIG }}
-
 jobs:
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
@@ -25,15 +17,25 @@ jobs:
     name: Build and Deploy Job
     steps:
       - uses: actions/checkout@v3
-      - name: Echo Env Variables
+      - name: Create and Populate Env file
+        env:
+          NX_APP_NAME: ${{ vars.NX_APP_NAME }}
+          API_URL: ${{ vars.API_URL }}
+          NX_CONFIG_ONE: ${{ secrets.NX_CONFIG_ONE }}
+          NX_CONFIG_TWO: ${{ secrets.NX_CONFIG_TWO }}
+          NX_CONFIG_THREE: ${{ secrets.NX_CONFIG_THREE }}
+          INTERNAL_CONFIG: ${{ secrets.INTERNAL_CONFIG }}
         run: |
-          echo "NX_APP_NAME=$NX_APP_NAME"
-          echo "NX_APP_NAME: ${{ env.NX_APP_NAME }}"
-          echo "API_URL: ${{ env.API_URL }}"
-          echo "NX_CONFIG_ONE: ${{ env.NX_CONFIG_ONE }}"
-          echo "NX_CONFIG_TWO: ${{ env.NX_CONFIG_TWO }}"
-          echo "NX_CONFIG_THREE: ${{ env.NX_CONFIG_THREE }}"
-          echo "INTERNAL_CONFIG: ${{ env.INTERNAL_CONFIG }}"
+          cat <<EOF > .env
+          NX_APP_NAME=${{ env.NX_APP_NAME }}
+          API_URL=${{ env.API_URL }}
+          NX_CONFIG_ONE=${{ env.NX_CONFIG_ONE }}
+          NX_CONFIG_TWO=${{ env.NX_CONFIG_TWO }}
+          NX_CONFIG_THREE=${{ env.NX_CONFIG_THREE }}
+          INTERNAL_CONFIG=${{ env.INTERNAL_CONFIG }}
+          EOF
+          echo "cat .env"
+          cat .env
       - name: Setup pnpm
         uses: pnpm/action-setup@v2.2.4
       - name: Setup Node
@@ -61,13 +63,6 @@ jobs:
       - name: Install deps (with cache)
         run: pnpm install
       - name: Build Web App
-        env:
-          NX_APP_NAME: ${{ vars.NX_APP_NAME }}
-          API_URL: ${{ vars.API_URL }}
-          NX_CONFIG_ONE: ${{ secrets.NX_CONFIG_ONE }}
-          NX_CONFIG_TWO: ${{ secrets.NX_CONFIG_TWO }}
-          NX_CONFIG_THREE: ${{ secrets.NX_CONFIG_THREE }}
-          INTERNAL_CONFIG: ${{ secrets.INTERNAL_CONFIG }}
         run: pnpm build
       - name: Deploy
         id: builddeploy
