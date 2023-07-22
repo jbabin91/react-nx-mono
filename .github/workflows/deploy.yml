@@ -28,7 +28,7 @@ jobs:
       - name: Setup PNPM and Node
         uses: ./.github/actions/pnpm-node
       - name: Build App
-        uses: ./.github/actions/build-app
+        run: pnpm build
       - name: Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1

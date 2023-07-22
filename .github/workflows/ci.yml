@@ -21,4 +21,4 @@ jobs:
       - name: Branch Checks
         uses: ./.github/actions/branch-checks
       - name: Build app
-        uses: ./.github/actions/build-app
+        run: pnpm build
