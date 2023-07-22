@@ -17,11 +17,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: .env clean up
-        run: |
-          rm -rf .env
-          rm -rf .env.*
-
       - name: Setup PNPM
         uses: pnpm/action-setup@v2.2.4
 
@@ -63,4 +58,4 @@ jobs:
           pnpm lint
 
       - name: Build app
-        run: pnpm build
+        run: pnpm build --force
