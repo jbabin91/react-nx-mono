@@ -3,17 +3,17 @@ name: Continuous Integration
 on:
   push:
 
-env:
-  NX_APP_NAME: ${{ vars.NX_APP_NAME }}
-  API_URL: ${{ vars.API_URL }}
-  NX_CONFIG_ONE: ${{ secrets.NX_CONFIG_ONE }}
-  NX_CONFIG_TWO: ${{ secrets.NX_CONFIG_TWO }}
-  NX_CONFIG_THREE: ${{ secrets.NX_CONFIG_THREE }}
-  INTERNAL_CONFIG: ${{ secrets.INTERNAL_CONFIG }}
-
 jobs:
   CI:
     runs-on: ubuntu-latest
+    environment: prod
+    env:
+      NX_APP_NAME: ${{ vars.NX_APP_NAME }}
+      API_URL: ${{ vars.API_URL }}
+      NX_CONFIG_ONE: ${{ secrets.NX_CONFIG_ONE }}
+      NX_CONFIG_TWO: ${{ secrets.NX_CONFIG_TWO }}
+      NX_CONFIG_THREE: ${{ secrets.NX_CONFIG_THREE }}
+      INTERNAL_CONFIG: ${{ secrets.INTERNAL_CONFIG }}
     steps:
       - uses: actions/checkout@v3
       - name: Setup PNPM and Node
