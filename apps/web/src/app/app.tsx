@@ -9,7 +9,6 @@ export function App() {
     CONFIG_ONE: env.CONFIG_ONE,
     CONFIG_THREE: env.CONFIG_THREE,
     CONFIG_TWO: env.CONFIG_TWO,
-    INTERNAL_CONFIG: env.INTERNAL_CONFIG,
     NODE_ENV: env.NODE_ENV,
   });
 

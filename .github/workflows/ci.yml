@@ -1,0 +1,16 @@
+name: Continuous Integration
+
+on:
+  push:
+
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup PNPM and Node
+        uses: ./.github/actions/pnpm-node
+      - name: Branch Checks
+        uses: ./.github/actions/branch-checks
+      - name: Build app
+        uses: ./.github/actions/build-app

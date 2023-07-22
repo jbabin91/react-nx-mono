@@ -8,7 +8,6 @@ export const env = createEnv({
     CONFIG_ONE: z.string().default('default config one'),
     CONFIG_THREE: z.string().default('default config three'),
     CONFIG_TWO: z.string().default('default config two'),
-    INTERNAL_CONFIG: z.string().default('default internal config'),
     NODE_ENV: z
       .enum(['development', 'test', 'production'])
       .default('development'),
@@ -20,7 +19,6 @@ export const env = createEnv({
     CONFIG_ONE: process.env['NX_CONFIG_ONE'],
     CONFIG_THREE: process.env['NX_CONFIG_THREE'],
     CONFIG_TWO: process.env['NX_CONFIG_TWO'],
-    INTERNAL_CONFIG: process.env['INTERNAL_CONFIG'],
     NODE_ENV: process.env['NODE_ENV'],
   },
 });
