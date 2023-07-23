@@ -70,5 +70,6 @@
         "unicorn/prefer-module": "off"
       }
     }
-  ]
+  ],
+  "reportUnusedDisableDirectives": true
 }
