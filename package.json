@@ -66,5 +66,5 @@
     "typescript": "~5.1.6",
     "url-loader": "^4.1.1"
   },
-  "packageManager": "pnpm@8.6.10"
+  "packageManager": "pnpm@8.6.11"
 }
