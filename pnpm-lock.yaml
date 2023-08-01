@@ -30,7 +30,7 @@ devDependencies:
     version: 7.22.5(@babel/core@7.22.9)
   '@nx/cypress':
     specifier: 16.6.0
-    version: 16.6.0(@swc/core@1.3.73)(@types/node@20.4.5)(cypress@12.17.2)(eslint@8.46.0)(nx@16.6.0)(typescript@5.1.6)
+    version: 16.6.0(@swc/core@1.3.73)(@types/node@20.4.5)(cypress@12.17.3)(eslint@8.46.0)(nx@16.6.0)(typescript@5.1.6)
   '@nx/eslint-plugin':
     specifier: 16.6.0
     version: 16.6.0(@swc/core@1.3.73)(@types/node@20.4.5)(@typescript-eslint/parser@6.2.1)(eslint-config-prettier@8.9.0)(eslint@8.46.0)(nx@16.6.0)(typescript@5.1.6)
@@ -89,8 +89,8 @@ devDependencies:
     specifier: ^29.6.2
     version: 29.6.2(@babel/core@7.22.9)
   cypress:
-    specifier: ^12.17.2
-    version: 12.17.2
+    specifier: ^12.17.3
+    version: 12.17.3
   eslint:
     specifier: ~8.46.0
     version: 8.46.0
@@ -1958,10 +1958,10 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@nrwl/cypress@16.6.0(@swc/core@1.3.73)(@types/node@20.4.5)(cypress@12.17.2)(eslint@8.46.0)(nx@16.6.0)(typescript@5.1.6):
+  /@nrwl/cypress@16.6.0(@swc/core@1.3.73)(@types/node@20.4.5)(cypress@12.17.3)(eslint@8.46.0)(nx@16.6.0)(typescript@5.1.6):
     resolution: {integrity: sha512-DxD6rdUbZTMa3d1Reaq1y718fk+4fnDZ3Rpv1r+QhxubyX/FyfomzOC61q75A/XAv9QtiWQUd10diivpPZeZOw==}
     dependencies:
-      '@nx/cypress': 16.6.0(@swc/core@1.3.73)(@types/node@20.4.5)(cypress@12.17.2)(eslint@8.46.0)(nx@16.6.0)(typescript@5.1.6)
+      '@nx/cypress': 16.6.0(@swc/core@1.3.73)(@types/node@20.4.5)(cypress@12.17.3)(eslint@8.46.0)(nx@16.6.0)(typescript@5.1.6)
     transitivePeerDependencies:
       - '@babel/traverse'
       - '@swc-node/register'
@@ -2158,7 +2158,7 @@ packages:
       - debug
     dev: true
 
-  /@nx/cypress@16.6.0(@swc/core@1.3.73)(@types/node@20.4.5)(cypress@12.17.2)(eslint@8.46.0)(nx@16.6.0)(typescript@5.1.6):
+  /@nx/cypress@16.6.0(@swc/core@1.3.73)(@types/node@20.4.5)(cypress@12.17.3)(eslint@8.46.0)(nx@16.6.0)(typescript@5.1.6):
     resolution: {integrity: sha512-nFns4lMN8bE4GxUImSfX3gotQoIH2Fha67q6TkfHYCVrYfPkNDaSzU2cAJ9O0BwyTMFlouHZmcqsdt2Qnl4DtQ==}
     peerDependencies:
       cypress: '>= 3 < 13'
@@ -2166,12 +2166,12 @@ packages:
       cypress:
         optional: true
     dependencies:
-      '@nrwl/cypress': 16.6.0(@swc/core@1.3.73)(@types/node@20.4.5)(cypress@12.17.2)(eslint@8.46.0)(nx@16.6.0)(typescript@5.1.6)
+      '@nrwl/cypress': 16.6.0(@swc/core@1.3.73)(@types/node@20.4.5)(cypress@12.17.3)(eslint@8.46.0)(nx@16.6.0)(typescript@5.1.6)
       '@nx/devkit': 16.6.0(nx@16.6.0)
       '@nx/js': 16.6.0(@swc/core@1.3.73)(@types/node@20.4.5)(nx@16.6.0)(typescript@5.1.6)
       '@nx/linter': 16.6.0(@swc/core@1.3.73)(@types/node@20.4.5)(eslint@8.46.0)(nx@16.6.0)(typescript@5.1.6)
       '@phenomnomnominal/tsquery': 5.0.1(typescript@5.1.6)
-      cypress: 12.17.2
+      cypress: 12.17.3
       detect-port: 1.5.1
       dotenv: 10.0.0
       semver: 7.5.3
@@ -3211,8 +3211,8 @@ packages:
     resolution: {integrity: sha512-Y4XFY5VJAuw0FgAqPNd6NNoV44jbq9Bz2L7Rh/J6jLTiHBSBJa9fxqQIvkIld4GsoDOcCbvzOUAbLPsSKKg+uA==}
     dev: true
 
-  /@types/node@14.18.54:
-    resolution: {integrity: sha512-uq7O52wvo2Lggsx1x21tKZgqkJpvwCseBBPtX/nKQfpVlEsLOb11zZ1CRsWUKvJF0+lzuA9jwvA7Pr2Wt7i3xw==}
+  /@types/node@16.18.39:
+    resolution: {integrity: sha512-8q9ZexmdYYyc5/cfujaXb4YOucpQxAV4RMG0himLyDUOEr8Mr79VrqsFI+cQ2M2h89YIuy95lbxuYjxT4Hk4kQ==}
     dev: true
 
   /@types/node@20.4.5:
@@ -5035,15 +5035,15 @@ packages:
     resolution: {integrity: sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==}
     dev: true
 
-  /cypress@12.17.2:
-    resolution: {integrity: sha512-hxWAaWbqQBzzMuadSGSuQg5PDvIGOovm6xm0hIfpCVcORsCAj/gF2p0EvfnJ4f+jK2PCiDgP6D2eeE9/FK4Mjg==}
+  /cypress@12.17.3:
+    resolution: {integrity: sha512-/R4+xdIDjUSLYkiQfwJd630S81KIgicmQOLXotFxVXkl+eTeVO+3bHXxdi5KBh/OgC33HWN33kHX+0tQR/ZWpg==}
     engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
     hasBin: true
     requiresBuild: true
     dependencies:
       '@cypress/request': 2.88.11
       '@cypress/xvfb': 1.2.4(supports-color@8.1.1)
-      '@types/node': 14.18.54
+      '@types/node': 16.18.39
       '@types/sinonjs__fake-timers': 8.1.1
       '@types/sizzle': 2.3.3
       arch: 2.2.0
