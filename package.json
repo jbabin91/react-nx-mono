@@ -58,7 +58,7 @@
     "jest-environment-jsdom": "^29.6.2",
     "nx": "16.6.0",
     "nx-cloud": "^16.2.0",
-    "prettier": "^3.0.0",
+    "prettier": "^3.0.1",
     "prettier-plugin-packagejson": "^2.4.5",
     "react-refresh": "^0.14.0",
     "ts-jest": "^29.1.1",
